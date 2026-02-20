@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hackathon 0: Bronze Tier - Personal AI Employee
 
 > **Your Life and Business on Autopilot. Local-first, Agent-driven, Human-in-the-loop.**
@@ -174,6 +175,5 @@ After mastering Bronze Tier, consider adding:
 - **Hackathon Meetings**: Wednesdays at 10:00 PM PKT on Zoom
 - **YouTube**: [Panaversity Channel](https://www.youtube.com/@panaversity)
 
----
 
 *Built for Hackathon 0 - Building Autonomous FTEs in 2026*
