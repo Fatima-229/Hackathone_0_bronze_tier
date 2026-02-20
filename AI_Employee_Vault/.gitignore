@@ -1,0 +1,226 @@
+# AI Employee Vault - Git Ignore File
+# =====================================
+# This file ensures sensitive data is never committed to version control
+
+# ===========================================
+# SECRETS AND CREDENTIALS (CRITICAL)
+# ===========================================
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+
+# Credential files
+*.json
+credentials.json
+service_account.json
+*-credentials.json
+*credentials*.json
+
+# API keys and tokens
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# ===========================================
+# LOGS AND STATE FILES
+# ===========================================
+
+# Log files (may contain sensitive data)
+Logs/*.log
+Logs/*.json
+*.log
+
+# State files (processed IDs, hashes, etc.)
+scripts/*_state.json
+scripts/*_hashes.json
+scripts/orchestrator_state.json
+
+# ===========================================
+# USER DATA (PRIVATE)
+# ===========================================
+
+# Action files (may contain personal/business data)
+Needs_Action/*.md
+Approved/*.md
+Rejected/*.md
+Plans/*.md
+Inbox/*
+
+# Completed items (archive separately if needed)
+Done/*.md
+
+# Briefings and reports
+Briefings/*.md
+
+# Invoices (financial data)
+Invoices/*.md
+Invoices/*.pdf
+
+# Accounting data
+Accounting/*.md
+Accounting/*.csv
+
+# ===========================================
+# DROP FOLDER (TEMPORARY)
+# ===========================================
+
+# Files dropped for processing
+Drop_Folder/*
+!Drop_Folder/.gitkeep
+
+# ===========================================
+# OBSIDIAN SPECIFIC
+# ===========================================
+
+# Obsidian workspace state
+*.workspace
+obsidian-plugins/
+.obsidian/plugins/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/appearance.json
+
+# Obsidian cache
+.obsidian/cache/
+.obsidian/types/
+
+# ===========================================
+# PYTHON
+# ===========================================
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+.envrc
+
+# ===========================================
+# OPERATING SYSTEM
+# ===========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# ===========================================
+# WHAT SHOULD BE COMMITED
+# ===========================================
+
+# These files SHOULD be committed:
+#
+# ✅ scripts/base_watcher.py
+# ✅ scripts/filesystem_watcher.py
+# ✅ scripts/orchestrator.py
+# ✅ scripts/SKILL.md
+# ✅ scripts/requirements.txt
+# ✅ Dashboard.md (template)
+# ✅ Company_Handbook.md
+# ✅ Business_Goals.md
+# ✅ README.md
+# ✅ .env.example
+# ✅ .gitignore
+#
+# These files should NOT be committed:
+#
+# ❌ .env (with actual secrets)
+# ❌ Logs/*.json (daily logs)
+# ❌ Needs_Action/*.md (active tasks)
+# ❌ Done/*.md (completed tasks - archive separately)
+# ❌ Any credential files
+# ❌ Any state files
+
+# ===========================================
+# EXCEPTIONS (things to explicitly include)
+# ===========================================
+
+# Keep .gitkeep files to preserve folder structure
+!.gitkeep
+!*/.gitkeep
+
+# Keep example files
+!.env.example
+!*.example

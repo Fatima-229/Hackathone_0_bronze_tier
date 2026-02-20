@@ -1,0 +1,37 @@
+# AI Employee Bronze Tier - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies (Bronze Tier)
+# These are all optional - the Bronze Tier works with just Python standard library
+
+# File system watching (optional - uses polling by default)
+# watchdog>=3.0.0
+
+# For future Gmail integration (Silver Tier)
+# google-auth>=2.0.0
+# google-auth-oauthlib>=1.0.0
+# google-auth-httplib2>=0.1.0
+# google-api-python-client>=2.0.0
+
+# For future WhatsApp integration (Silver Tier)
+# playwright>=1.40.0
+
+# For future email sending (Silver Tier)
+# python-dotenv>=1.0.0
+
+# Development dependencies
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+
+# Note: Bronze Tier uses only Python standard library modules:
+# - pathlib
+# - json
+# - logging
+# - time
+# - datetime
+# - hashlib
+# - shutil
+# - subprocess
+# - argparse
+# - abc (abstract base classes)
+# - typing
