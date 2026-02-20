@@ -162,7 +162,7 @@ class Orchestrator:
             if not self.dashboard_file.exists():
                 self.logger.warning('Dashboard.md not found')
                 return
-            
+
             # Count files in each folder
             inbox_count = self._count_files_in_folder(self.inbox_folder)
             needs_action_count = self._count_files_in_folder(self.needs_action_folder)
@@ -171,9 +171,9 @@ class Orchestrator:
             active_plans_count = self._count_files_in_folder(self.plans_folder)
             completed_today = self._get_today_completed_count()
             completed_this_week = self._get_week_completed_count()
-            
-            # Read current dashboard
-            content = self.dashboard_file.read_text()
+
+            # Read current dashboard with UTF-8 encoding
+            content = self.dashboard_file.read_text(encoding='utf-8')
             
             # Update placeholders
             replacements = {
@@ -185,8 +185,8 @@ class Orchestrator:
                 '{{needs_action_count}}': str(needs_action_count),
                 '{{pending_approval_count}}': str(pending_approval_count),
                 '{{approved_count}}': str(approved_count),
-                '{{watcher_status}}': '🟢 Running' if self.running else '🔴 Stopped',
-                '{{orchestrator_status}}': '🟢 Running' if self.running else '🔴 Stopped',
+                '{{watcher_status}}': 'Running',
+                '{{orchestrator_status}}': 'Running',
                 '{{last_sync}}': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                 '{{timestamp}}': datetime.now().isoformat()
             }
@@ -194,10 +194,19 @@ class Orchestrator:
             for placeholder, value in replacements.items():
                 content = content.replace(placeholder, value)
             
-            # Write updated dashboard
-            self.dashboard_file.write_text(content)
+            # Update dynamic values based on actual counts
+            content = content.replace('| **Pending Actions** | 1 |', f'| **Pending Actions** | {needs_action_count} |')
+            content = content.replace('| **Active Plans** | 1 |', f'| **Active Plans** | {active_plans_count} |')
+            content = content.replace('| **Tasks Completed Today** | 2 |', f'| **Tasks Completed Today** | {completed_today} |')
+            content = content.replace('| **Tasks Completed This Week** | 3 |', f'| **Tasks Completed This Week** | {completed_this_week} |')
+            content = content.replace('| /Needs_Action | 1 |', f'| /Needs_Action | {needs_action_count} |')
+            content = content.replace('| /Approved | 1 |', f'| /Approved | {approved_count} |')
+            content = content.replace('| Last Sync | 2026-02-21 00:37:58 |', f'| Last Sync | {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} |')
+
+            # Write updated dashboard with UTF-8 encoding
+            self.dashboard_file.write_text(content, encoding='utf-8')
             
-            self.logger.debug('Dashboard updated')
+            self.logger.info('Dashboard updated successfully')
             
         except Exception as e:
             self.logger.error(f'Error updating dashboard: {e}')

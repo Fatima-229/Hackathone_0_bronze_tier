@@ -1,5 +1,5 @@
 ---
-last_updated: {{timestamp}}
+last_updated: 2026-02-21T00:37:58.658567
 status: active
 ---
 
@@ -14,9 +14,9 @@ status: active
 
 | Metric | Value |
 |--------|-------|
-| **Pending Actions** | 1 |
-| **Active Plans** | 1 |
-| **Tasks Completed Today** | 2 |
+| **Pending Actions** | 4 |
+| **Active Plans** | 5 |
+| **Tasks Completed Today** | 0 |
 | **Tasks Completed This Week** | 3 |
 
 ---
@@ -26,9 +26,9 @@ status: active
 | Folder | Count |
 |--------|-------|
 | /Inbox | 0 ✅ |
-| /Needs_Action | 1 |
+| /Needs_Action | 4 |
 | /Pending_Approval | 0 |
-| /Approved | 1 |
+| /Approved | 0 |
 
 ---
 
@@ -84,7 +84,7 @@ status: active
 |-----------|--------|
 | File Watcher | 🟢 Ready |
 | Orchestrator | 🟢 Ready |
-| Last Sync | {{last_sync}} |
+| Last Sync | 2026-02-21 00:44:36 |
 
 ---
 
@@ -105,5 +105,5 @@ status: active
 
 ---
 
-*Last generated: {{timestamp}}*
+*Last generated: 2026-02-21T00:37:58.658567*
 *AI Employee v0.1 - Bronze Tier*
