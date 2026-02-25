@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hackathon 0: Bronze Tier - Personal AI Employee
 
 > **Your Life and Business on Autopilot. Local-first, Agent-driven, Human-in-the-loop.**
