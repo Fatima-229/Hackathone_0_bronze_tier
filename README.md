@@ -166,13 +166,3 @@ After mastering Bronze Tier, consider adding:
 3. **MCP Integration**: Connect to external services
 4. **Scheduled Tasks**: Cron-based automation
 5. **Email Sending**: Automated responses (with approval)
-
----
-
-## 🔗 Resources
-
-- **Hackathon Meetings**: Wednesdays at 10:00 PM PKT on Zoom
-- **YouTube**: [Panaversity Channel](https://www.youtube.com/@panaversity)
-
-
-*Built for Hackathon 0 - Building Autonomous FTEs in 2026*
